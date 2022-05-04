@@ -1,6 +1,6 @@
 CREATE TABLE tk_category(
 	id serial UNIQUE NOT NULL,
-	name text NOT NULL,
+	name text NOT NULL UNIQUE,
 	PRIMARY KEY (id)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE tk_activity(
 
 CREATE TABLE cost_center(
 	id serial NOT NULL,
-	name text NOT NULL,
+	name text NOT NULL UNIQUE,
 	PRIMARY KEY (id)
 );
 
