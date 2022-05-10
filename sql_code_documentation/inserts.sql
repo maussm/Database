@@ -1,238 +1,114 @@
 -- First layer of service catalogue
 
-INSERT INTO tk_category (id, name) VALUES 
-(DEFAULT, 'Basbehov'),
-(DEFAULT, 'Social inkludering'),
-(DEFAULT, 'Socialt rättighetsarbete'),
-(DEFAULT, 'Boende'),
-(DEFAULT, 'Arbetsintegration'),
-(DEFAULT, 'Utbildning')
-;
+INSERT INTO tk_category (id, name, id_ext) VALUES
+(DEFAULT, 'Basbehov', 1),
+(DEFAULT, 'Social inkludering', 2),
+(DEFAULT, 'Socialt rättighetsarbete', 3),
+(DEFAULT, 'Boende', 4),
+(DEFAULT, 'Arbetsintegration', 5),
+(DEFAULT, 'Utbildning', 6);
 
 -- Second layer of service catalogue
 
 INSERT INTO tk_service VALUES
-(DEFAULT, 'Mat'                                , 1),
-(DEFAULT, 'Ekonomiskt stöd'                    , 1),
-(DEFAULT, 'Medicin och hälsoinsatser'          , 1),
+('Mat'                                , 1,DEFAULT, 1),
+('Ekonomiskt stöd'                    , 1,DEFAULT, 2),
+('Medicin och hälsoinsatser'          , 1,DEFAULT, 3),
 
-(DEFAULT, 'Gemenskap'                          , 2),
-(DEFAULT, 'Gruppgemenskap'                     , 2),
-(DEFAULT, 'Kollo'                              , 2),
+('Gemenskap'                          , 2,DEFAULT, 4),
+('Gruppgemenskap'                     , 2,DEFAULT, 5),
+('Kollo'                              , 2,DEFAULT, 6),
 
-(DEFAULT, 'Ombudskap'                          , 3),
-(DEFAULT, 'Social mobilisering'                , 3),
+('Ombudskap'                          , 3,DEFAULT, 7),
+('Social mobilisering'                , 3,DEFAULT, 8),
 
-(DEFAULT, 'Akutboende'                         , 4),
-(DEFAULT, 'Stödboende'                         , 4),
-(DEFAULT, 'Träningslägenhet'                   , 4),
-(DEFAULT, 'Bostad först'                       , 4),
-(DEFAULT, 'Referenslägenhet'                   , 4),
-(DEFAULT, 'Privat bostadsförmedling'           , 4),
-(DEFAULT, 'Gruppboende'                        , 4),
+('Akutboende'                         , 4,DEFAULT, 9),
+('Stödboende'                         , 4,DEFAULT, 10),
+('Träningslägenhet'                   , 4,DEFAULT, 11),
+('Bostad först'                       , 4,DEFAULT, 12),
+('Referenslägenhet'                   , 4,DEFAULT, 13),
+('Privat bostadsförmedling'           , 4,DEFAULT, 14),
+('Gruppboende'                        , 4,DEFAULT, 15),
 
-(DEFAULT, 'Förberedande arbetsmarknadsinsatser', 5),
-(DEFAULT, 'Subventionerade anställningar'      , 5),
-(DEFAULT, 'Matchingstjänster'                  , 5),
-(DEFAULT, 'Feriejobb'                          , 5),
+('Förberedande arbetsmarknadsinsatser', 5,DEFAULT, 16),
+('Subventionerade anställningar'      , 5,DEFAULT, 17),
+('Matchingstjänster'                  , 5,DEFAULT, 18),
+('Feriejobb'                          , 5,DEFAULT, 19),
 
 
-(DEFAULT, 'Yrkeshögskoleutbildning'            , 6),
-(DEFAULT, 'Folkhögskolekurser'                 , 6)
-;
+('Yrkeshögskoleutbildning'            , 6,DEFAULT, 20),
+('Folkhögskolekurser'                 , 6,DEFAULT, 21);
 
 -- Third layer of service catalogue
 
-INSERT INTO tk_activity_type VALUES
-
-(DEFAULT, 'Måltid'                                              ,1),
-(DEFAULT, 'Matkasse'                                            ,1),
-
-(DEFAULT, 'Meviljade Bidrag'                                    ,2),
-(DEFAULT, 'SL-biljett'                                          ,2),
-(DEFAULT, 'Presentkort'                                         ,2),
-(DEFAULT, 'Julklappar'                                          ,2),
-
-(DEFAULT, 'Hälsokontroll'                                       ,3),
-(DEFAULT, 'Vaccination'                                         ,3),
-
-(DEFAULT, 'Öppen mötesplats'                                    ,4),
-(DEFAULT, 'Uppsökande samtal'                                   ,4),
-
-(DEFAULT, 'Gruppaktivitet'                                      ,5),
-(DEFAULT, 'Samtalsgrupp'                                        ,5),
-(DEFAULT, 'Utflykter'                                           ,5),
-(DEFAULT, 'Utbildning och information'                          ,5),
-(DEFAULT, 'Evenemang'                                           ,5),
-
-(DEFAULT, 'Sommarkollo'                                         ,6),
-
-(DEFAULT, 'Rådgivning'                                          ,7),
-
-(DEFAULT, 'Social mobilisering'                                 ,8),
-
-(DEFAULT, 'Sängplats'                                           ,9),
-
-(DEFAULT, 'Eget rum'                                            ,10),
-
-(DEFAULT, 'Träningslägenhet'                                    ,11),
-
-(DEFAULT, 'Bostad först'                                        ,12),
-
-(DEFAULT, 'Referenslägenhet'                                    ,13),
-
-(DEFAULT, 'Matching hyresvärd och hyresgäst'                    ,14),
-
-(DEFAULT, 'Gruppboende'                                         ,15),
-
-(DEFAULT, 'Arbetsträning'                                       ,16),
-(DEFAULT, 'Förstärkt arbetsträning'                             ,16),
-(DEFAULT, 'Stöd till personligt biträde'                        ,16),
-(DEFAULT, 'Gruppvägledning'                                     ,16),
-(DEFAULT, 'Validering'                                          ,16),
-
-(DEFAULT, 'Lönebidragsanställning för utveckling i anställning' ,17),
-(DEFAULT, 'Lönebidragsanställning för trygghet i anställning'   ,17),
-(DEFAULT, 'Individuell vägledning'                              ,17),
-
-(DEFAULT, 'Unga i jobb'                                         ,18),
-(DEFAULT, 'KROM'                                                ,18),
-
-(DEFAULT, 'Feriejobb'                                           ,19),
-
-(DEFAULT, 'Långa kurser'                                        ,20),
-(DEFAULT, 'Uppdragsutbildning'                                  ,20),
-(DEFAULT, 'Korta kurser (YH)'                                   ,20),
-
-(DEFAULT, 'Allmän kurs'                                         ,21),
-(DEFAULT, 'Särskild kurs'                                       ,21),
-(DEFAULT, 'Uppdragsutbildning'                                  ,21),
-(DEFAULT, 'Korta kurser (FH)'                                   ,21)
-;
-
--- Fourth layer of service catalogue
-
 INSERT INTO tk_activity VALUES
+('Måltid'                                             , 1, DEFAULT, 1),
+('Matkasse'                                           , 1, DEFAULT, 2),
 
-(DEFAULT, 'Frukost',                                             1),
-(DEFAULT, 'Lunch',                                               1),
-(DEFAULT, 'Mellanmål',                                           1),
-(DEFAULT, 'Middag',                                              1),
-(DEFAULT, 'Matlåda',                                             1),
+('Meviljade Bidrag'                                   , 2, DEFAULT, 3),
+('SL-biljett'                                         , 2, DEFAULT, 4),
+('Presentkort'                                        , 2, DEFAULT, 5),
+('Julklappar'                                         , 2, DEFAULT, 6),
 
-(DEFAULT, 'Matkasse',                                            2),
+('Hälsokontroll'                                      , 3, DEFAULT, 7),
+('Vaccination'                                        , 3, DEFAULT, 8),
 
-(DEFAULT, 'Beviljade bidrag',                                    3),
+('Öppen mötesplats'                                   , 4, DEFAULT, 9),
+('Uppsökande samtal'                                  , 4, DEFAULT, 10),
 
-(DEFAULT, 'SL-biljett',                                          4),
+('Gruppaktivitet'                                     , 5, DEFAULT, 11),
+('Samtalsgrupp'                                       , 5, DEFAULT, 12),
+('Utflykter'                                          , 5, DEFAULT, 13),
+('Utbildning och information'                         , 5, DEFAULT, 14),
+('Evenemang'                                          , 5, DEFAULT, 15),
 
-(DEFAULT, 'Externt annat',                                       5),
-(DEFAULT, 'Externa matbutiker',                                  5),
-(DEFAULT, 'Internt ssm',                                         5),
+('Sommarkollo'                                        , 6, DEFAULT, 16),
 
-(DEFAULT, 'Julklappar',                                          6),
+('Rådgivning'                                         , 7, DEFAULT, 17),
 
-(DEFAULT, 'Läkare i världen',                                    7),
-(DEFAULT, 'MIKA-hälsa',                                          7),
+('Social mobilisering'                                , 8, DEFAULT, 18),
 
-(DEFAULT, 'Covid-vaccin',                                        8),
+('Sängplats'                                          , 9, DEFAULT, 19),
 
-(DEFAULT, 'Öppen mötesplats',                                    9),
-(DEFAULT, 'Mötesplats 0-5',                                      9),
-(DEFAULT, 'Mötesplats familj',                                   9),
-(DEFAULT, 'Mötesplats unga föräldrar',                           9),
-(DEFAULT, 'Mötesplats unga tjejer',                              9),
-(DEFAULT, 'Mötesplats ungdom',                                   9),
-(DEFAULT, 'Barnbesök',                                           9),
+('Eget rum'                                           , 10, DEFAULT, 20),
 
-(DEFAULT, 'Uppsökande samtal',                                   10),
+('Träningslägenhet'                                   , 11, DEFAULT, 21),
 
-(DEFAULT, 'Hälsokommunikation',                                  11),
-(DEFAULT, 'Skapa och öva svenska',                               11),
-(DEFAULT, 'Språkcafé',                                           11),
+('Bostad först'                                       , 12, DEFAULT, 22),
 
-(DEFAULT, 'Ateism',                                              12),
-(DEFAULT, 'Livsberättargrupp',                                   12),
-(DEFAULT, 'HBTQ',                                                12),
-(DEFAULT, 'Hälso- och berättargrupp',                            12),
-(DEFAULT, 'Interreligiöst perspektiv',                           12),
-(DEFAULT, 'Vem är jag imorgon?',                                 12),
+('Referenslägenhet'                                   , 13, DEFAULT, 23),
 
-(DEFAULT, 'Utflykter',                                           13),
+('Matching hyresvärd och hyresgäst'                   , 14, DEFAULT, 24),
 
-(DEFAULT, 'Basbehovskurs',                                       14),
-(DEFAULT, 'Föräldrastärkande',                                   14),
-(DEFAULT, 'Svenska Nybörjare',                                   14),
+('Gruppboende'                                        , 15, DEFAULT, 25),
 
-(DEFAULT, 'Evenemang',                                           15),
+('Arbetsträning'                                      , 16, DEFAULT, 26),
+('Förstärkt arbetsträning'                            , 16, DEFAULT, 27),
+('Stöd till personligt biträde'                       , 16, DEFAULT, 28),
+('Gruppvägledning'                                    , 16, DEFAULT, 29),
+('Validering'                                         , 16, DEFAULT, 30),
 
-(DEFAULT, 'Sommarkollo',                                         16),
+('Lönebidragsanställning för utveckling i anställning', 17, DEFAULT, 31),
+('Lönebidragsanställning för trygghet i anställning'  , 17, DEFAULT, 32),
+('Individuell vägledning'                             , 17, DEFAULT, 33),
 
-(DEFAULT, 'Rådgivning',                                          17),
+('Unga i jobb'                                        , 18, DEFAULT, 34),
+('KROM'                                               , 18, DEFAULT, 35),
 
-(DEFAULT, 'Social mobilisering',                                 18),
+('Feriejobb'                                          , 19, DEFAULT, 36),
 
-(DEFAULT, 'Sängplats',                                           19),
+('Långa kurser'                                       , 20, DEFAULT, 37),
+('Uppdragsutbildning'                                 , 20, DEFAULT, 38),
+('Korta kurser (YH)'                                  , 20, DEFAULT, 39),
 
-(DEFAULT, 'Eget rum',                                            20),
-
-(DEFAULT, 'Träningslägenhet',                                    21),
-
-(DEFAULT, 'Bostad först',                                        22),
-
-(DEFAULT, 'Referenslägenhet',                                    23),
-
-(DEFAULT, 'Matching hyresvärd och hyresgäst',                    24),
-
-(DEFAULT, 'Gruppboende',                                         25),
-
-(DEFAULT, 'Arbetsträning',                                       26),
-
-(DEFAULT, 'Förstärkt arbetsträning',                             27),
-
-(DEFAULT, 'Stöd till personligt biträde',                        28),
-
-(DEFAULT, 'Gruppvägledning',                                     29),
-
-(DEFAULT, 'Validering',                                          30),
-
-(DEFAULT, 'Lönebidragsanställning för utveckling i anställning', 31),
-
-(DEFAULT, 'Lönebidragsanställning för trygghet i anställning',   32),
-
-(DEFAULT, 'Individuell vägledning',                              33),
-
-(DEFAULT, 'Unga i jobb',                                         34),
-
-(DEFAULT, 'KROM',                                                35),
-
-(DEFAULT, 'Feriejobb',                                           36),
-
-(DEFAULT, 'Behandlingspedagog/Socialpedagog',                    37),
-(DEFAULT, 'YH Flex Behandlingspedagog/Socialpedagog',            37),
-
-(DEFAULT, 'Validering',                                          38),
-
-(DEFAULT, 'Mängs våld mot kvinnor',                              39),
-
-(DEFAULT, 'Grundskolenivå, AK-grund, åk 1-2',                    40),
-(DEFAULT, 'A12, åk 1-2',                                         40),
-(DEFAULT, 'S23, Social inriktning, åk 2-3',                      40),
-(DEFAULT, 'K23, Kulturinriktning, åk 2-3',                       40),
-(DEFAULT, 'D13, Distans, åk 1-3',                                40),
-
-(DEFAULT, 'Svenska med inriktning restaurang',                   41),
-(DEFAULT, 'Skriv för att nå ut',                                 41),
-
-(DEFAULT, 'Uppdragsutbildning',                                  42),
-
-(DEFAULT, 'Korta kurser (FH)',                                   43)
-;
+('Allmän kurs'                                        , 21, DEFAULT, 40),
+('Särskild kurs'                                      , 21, DEFAULT, 41),
+('Uppdragsutbildning'                                 , 21, DEFAULT, 42),
+('Korta kurser (FH)'                                  , 21, DEFAULT, 43);
 
 -- Cost center inserts
 
 INSERT INTO cost_center VALUES
-
 (DEFAULT, 'Unga Station Södermalm'),
 (DEFAULT, 'Unga Station Vårberg'),
 (DEFAULT, 'Unga Station Järva'),
@@ -256,5 +132,4 @@ INSERT INTO cost_center VALUES
 (DEFAULT, 'Second Hand'),
 (DEFAULT, 'Produktion'),
 (DEFAULT, 'Yrkeshögskolan'),
-(DEFAULT, 'Folkhögskolan')
-;
+(DEFAULT, 'Folkhögskolan');

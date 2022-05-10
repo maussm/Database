@@ -69,7 +69,7 @@ CREATE TABLE activity_contents(
 
 CREATE TABLE attendance(
     id serial NOT NULL UNIQUE,
-    reported date NOT NULL,
+    date date NOT NULL,
     participant int NOT NULL,
     c_id int NOT NULL,
     PRIMARY KEY (id),
