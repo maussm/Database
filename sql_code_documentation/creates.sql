@@ -31,7 +31,12 @@ CREATE TABLE cost_center(
 
 CREATE TABLE participant(
     id serial NOT NULL,
-    name text NOT NULL,
+    uno_code text NOT NULL,
+    first_name text NOT NULL,
+    last_name text NOT NULL,
+    birth_date date,
+    spoken_language text,
+    country text,
     PRIMARY KEY(id)
 );
 
