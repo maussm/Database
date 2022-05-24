@@ -1137,7 +1137,7 @@ VALUES
 (1996    ,'Mack'      ,'Stevenson'  ,null        ,'SE'           ,'Sverige'),
 (1997    ,'Regina'    ,'Davenport'  ,'2009-09-12','SE'           ,'Sverige'),
 (1998    ,'Dariel'    ,'Duarte'     ,null        ,'SE'           ,'Sverige'),
-(1999    ,'Kynlee'    ,'Hines'      ,null        ,'SE'           ,'Sverige')
+(1999    ,'Kynlee'    ,'Hines'      ,null        ,'SE'           ,'Sverige');
 
 
 

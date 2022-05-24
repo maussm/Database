@@ -66,7 +66,6 @@ CREATE TABLE activity(
 CREATE TABLE activity_contents(
     activity_id int NOT NULL,
     participant_id int NOT NULL,
-    id serial NOT NULL UNIQUE,
     PRIMARY KEY (activity_id, participant_id),
     FOREIGN KEY (activity_id) REFERENCES activity (id),
     FOREIGN KEY (participant_id) REFERENCES participant (id)

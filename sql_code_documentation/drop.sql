@@ -11,4 +11,5 @@ DROP TABLE IF EXISTS
     CASCADE;
 
 DROP SEQUENCE IF EXISTS
-    hibernate_sequence;
+    hibernate_sequence,
+    id_generator;
