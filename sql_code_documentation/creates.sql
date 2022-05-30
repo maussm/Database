@@ -80,3 +80,19 @@ CREATE TABLE attendance(
     FOREIGN KEY (participant) REFERENCES participant (id),
     FOREIGN KEY (c_id) REFERENCES cost_center (id)
 );
+
+CREATE OR REPLACE VIEW report_data AS
+SELECT
+    a.id,
+    tka.name AS activity_name,
+    a.occurrence_date,
+    a.reported_date,
+    cc.name AS cost_center_name,
+    a.participants,
+    COUNT(ac.participant_id) AS reported_participants
+FROM activity AS a
+LEFT JOIN activity_contents AS ac ON a.id = ac.activity_id
+LEFT JOIN tk_activity AS tka ON a.activity_id = tka.id
+LEFT JOIN cost_center cc ON a.cost_center = cc.id
+GROUP BY a.id, tka.name, cc.name
+ORDER BY a.id;
